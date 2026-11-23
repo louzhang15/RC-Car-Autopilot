@@ -1,0 +1,8 @@
+# Agent workflow configuration is not rover-domain knowledge.
+AGENTS.md
+CLAUDE.md
+.claude/
+.codex/
+
+# Never feed generated artifacts back into their own source corpus.
+graphify-out/

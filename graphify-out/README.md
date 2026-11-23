@@ -1,6 +1,8 @@
 # Project knowledge graph
 
-This graph maps the project's requirements and proposed architecture. It describes a planned rover; it is not evidence of implemented software or validated hardware.
+This graph is primarily a persistent retrieval index for Claude and Codex. Both follow [the shared project instructions](../AGENTS.md): query first with a small output budget, then read only relevant source sections. The HTML viewer is optional.
+
+The graph maps the project's requirements and proposed architecture. It describes a planned rover; it is not evidence of implemented software or validated hardware.
 
 ## Open the graph
 
@@ -16,9 +18,12 @@ With [Graphify](https://github.com/Graphify-Labs/graphify) installed:
 ```powershell
 graphify query "How does the rover stop when localization is lost?" --budget 800
 graphify explain "Mission Runner"
+graphify explain "Actuator-side command timeout"
 ```
 
 Labels are searchable; use the exact node labels shown in the viewer for focused `explain` and `path` commands.
+
+Do not load the entire graph JSON or report into every conversation. Narrow truncated or verbose queries, verify answers in the cited sources, and fall back to targeted searches when the graph misses something. The installed version can exceed the requested query budget; its `section` command also failed against this graph, so use bounded source reads for headings. No model-token savings have been measured. This repository is still small, so graph overhead can outweigh savings for simple lookups.
 
 ## Refresh
 
