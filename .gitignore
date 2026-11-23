@@ -1,0 +1,13 @@
+# Graphify machine-local state and intermediate extraction files
+graphify-out/.*
+graphify-out/cache/
+graphify-out/manifest.json
+graphify-out/cost.json
+graphify-out/memory/
+
+# Local configuration and Python caches
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
